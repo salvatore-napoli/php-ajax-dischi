@@ -20,7 +20,7 @@
 
 	header('Content-Type: application/json');
 
-	if (empty($_GET['genre']) || $_GET['genre'] === 'All') {
+	if (!isset($_GET['genre']) || $_GET['genre'] === 'All') {
 		echo json_encode($diskDB);
 	} else {
 		$filteredDisks = [];
