@@ -26,7 +26,7 @@ $diskDB = [
   ],
 
   [
-    'poster' => 'https://images-na.ssl-images-amazon.com/images/I/810nSIQOLiL._SY355_.jpg',
+    'poster' => 'https://cdn2.jazztimes.com/2018/05/SteveGadd-800x723.jpg',
     'title' => 'Steve Gadd Band',
     'author' => 'Steve Gadd Band',
     'genre' => 'Jazz',

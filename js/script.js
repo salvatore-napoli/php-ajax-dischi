@@ -6,7 +6,7 @@ new Vue ({
 	data: {
 		disks: '',
 		genres: [],
-		chosenGenre: 'All'
+		selectedGenre: ''
 	},
 
 	mounted () {
@@ -15,12 +15,22 @@ new Vue ({
 		axios.get('http://localhost:8888/GIT/php-ajax-dischi/app/server.php')
 		.then(function (disks) {
 			self.disks = disks.data;
-			console.log(self.disks)
 			self.disks.forEach((element) => {
 				if (!self.genres.includes(element.genre)) {
 					self.genres.push(element.genre);
 				}
 			});
 		});
+	},
+
+	methods: {
+		filterByGenre () {
+			const self = this;
+			
+			axios.get(`http://localhost:8888/GIT/php-ajax-dischi/app/server.php?genre=${self.selectedGenre}`)
+			.then(function (disks) {
+				self.disks = disks.data;
+			});
+		}
 	}
 });

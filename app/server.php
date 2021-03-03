@@ -14,9 +14,24 @@
     if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS'])) {
       header("Access-Control-Allow-Headers: Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization");
     }
-		
+
     exit(0);
 	}
 
 	header('Content-Type: application/json');
-	echo json_encode($diskDB);
+
+	if (empty($_GET['genre']) || $_GET['genre'] === 'All') {
+		echo json_encode($diskDB);
+	} else {
+		$filteredDisks = [];
+
+		foreach ($diskDB as $disk) {
+			if ($disk['genre'] === $_GET['genre']) {
+				array_push($filteredDisks, $disk);
+			}
+		}
+
+		if (!empty($filteredDisks)) {
+			echo json_encode($filteredDisks);
+		}
+	}
