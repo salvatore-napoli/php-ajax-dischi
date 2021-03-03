@@ -1,16 +1,52 @@
 <!DOCTYPE html>
-<html lang="it" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <title></title>
-</head>
-<body>
+<html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <title>Dischi</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
+      <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css?v=2">
+    </head>
+    <body>
+			<div id="app" class="flex">
+				<div class="left-bar"></div>
 
-    <!-- 2nd milestone
-    per la seconda milestone, index.html dovrà eseguire una chiamata ajax (meglio se con vuejs) verso app/server.php
+				<div class="page-container flex">
 
-    -->
+					<header class="header">
+							<div class="header-content flex">
+								<img src="img/logo.png" alt="logo" />
+							</div>
+					</header>
 
+					<main class="main">
+						<div class="filter-container">
+							<label class="filter" for="genreFilter">Filter by Genre</label>
+							<select id="genreFilter">
+                <option>All</option>
+								<option v-for="genre in genres">{{genre}}</option>
+							</select>
+						</div>
 
-</body>
+						<div class="cds-container flex">
+
+							<div class="cd flex" v-for="disk in disks">
+								<img class="cd-poster" :src="disk.poster" alt="poster" />
+								<h3 class="cd-title">{{disk.title}}</h3>
+								<span class="cd-author text-bold">{{disk.author}}</span>
+								<span class="cd-year text-bold">{{disk.year}}</span>
+							</div>
+
+						</div>
+					</main>
+				</div>
+
+				<div class="right-bar"></div>
+			</div>
+
+      <script src="js/script.js" charset="utf-8"></script>
+    </body>
 </html>

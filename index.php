@@ -35,7 +35,7 @@
 
 						<div class="cds-container flex">
 							<?php
-								foreach ($disks as $disk) {
+								foreach ($diskDB as $disk) {
 							?>
 
 							<div class="cd flex">
