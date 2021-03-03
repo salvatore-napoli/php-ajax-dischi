@@ -1,0 +1,19 @@
+/* TEXT COLORS */
+$text-color-1: #ffffff;
+$text-color-2: grey;
+$text-color-3: #D6D6D6;
+/* end TEXT COLORS */
+
+/* BACKGROUND COLORS */
+$bg-color-1: #000000;
+$bg-color-2: #191919;
+$bg-color-3: #0E0E0E;
+/* end BACKGROUND COLORS */
+
+/* MIXINS */
+@mixin bar-1 {
+	background-color: $bg-color-3;
+	width: 80px;
+	min-height: 100vh;
+}
+/* end MIXINS */

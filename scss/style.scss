@@ -1,2 +1,86 @@
 @import "_common.scss";
 @import "_variables.scss";
+
+#app {
+
+	.left-bar {
+		@include bar-1;
+	}
+
+	.right-bar {
+		@include bar-1;
+	}
+
+	.page-container {
+		flex-direction: column;
+		align-items: center;
+		width: 1070px;
+		height: 100%;
+		margin: 0 auto;
+		position: relative;
+
+		.header {
+			background-color: $bg-color-1;
+			width: 100%;
+			height: 50px;
+
+			&-content {
+
+				img {
+					height: 30px;
+					margin-top: 10px;
+				}
+			}
+		}
+
+		.main {
+			background-color: $bg-color-2;
+
+			.filter-container {
+
+				.filter {
+					color: $text-color-1;
+				}
+			}
+
+			.cds-container {
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap;
+				padding: 100px 130px;
+
+				.cd {
+					background-color: $bg-color-1;
+					justify-content: flex-start;
+					align-items: center;
+					flex-direction: column;
+					flex-basis: 200px;
+					padding: 20px;
+					margin: 10px 30px;
+					height: 300px;
+					text-align: center;
+
+					&-poster {
+						max-width: 100%;
+					}
+
+					&-title {
+						color: $text-color-3;
+						margin: 5px 0;
+						font-size: 18px;
+					}
+
+					&-author {
+						color: $text-color-2;
+						font-size: 15px;
+					}
+
+					&-year {
+						color: $text-color-3;
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+}
